@@ -1,0 +1,121 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e3f2fd, #fce4ec);
+    padding: 20px;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form container */
+form {
+    background-color: #ffffff;
+    max-width: 500px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Fieldset styling */
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+/* Legend (title of fieldset) */
+legend {
+    font-weight: bold;
+    color: #007bff;
+    padding: 0 5px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Focus effect */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Radio & checkbox alignment */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Align radio/checkbox text properly */
+fieldset input[type="radio"] + label,
+fieldset input[type="checkbox"] + label {
+    display: inline;
+    margin-right: 15px;
+}
+
+/* Space between options */
+fieldset input[type="radio"],
+fieldset input[type="checkbox"] {
+    margin-top: 10px;
+}
+
+/* Dropdown spacing */
+select {
+    margin-top: 10px;
+}
+
+/* Textarea */
+textarea {
+    resize: none;
+}
+
+/* Submit button */
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Button hover effect */
+input[type="submit"]:hover {
+    background: linear-gradient(to right, #0056b3, #003f7f);
+}
