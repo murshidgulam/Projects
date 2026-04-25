@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Admission Form</h1>
+    <form action="/process.php">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+            <br><br>
+
+            <label for="fathername">Father's Name</label>
+            <input type="text" id="fathername" name="fathername" placeholder="Enter your Father's Name" required>
+            <br><br>
+
+            <label for="mothername">Mother's Name</label>
+            <input type="text" id="mothername" name="mothername" placeholder="Enter your Mother's Name" required>
+            <br><br>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="phone" pattern="[0-9]{10}" required>
+            <br><br>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            <br><br>
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="Enter your Address" required>
+            <br><br>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Gender</legend>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Subjects</legend>
+            <input type="checkbox" name="physics" id="physics" value="physics">
+            <label for="physics">Physics</label>
+            <br>
+
+            <input type="checkbox" name="chemistry" id="chemistry" value="chemistry">
+            <label for="chemistry">Chemistry</label>
+            <br>
+
+            <input type="checkbox" name="biology" id="biology" value="biology">
+            <label for="biology">Biology</label>
+            <br>
+
+            <input type="checkbox" name="mathematics" id="mathematics" value="mathematics">
+            <label for="mathematics">Mathematics</label>
+            <br>
+
+            <input type="checkbox" name="computerscience" id="computerscience" value="computerscience">
+            <label for="computerscience">Computer Science</label>
+            <br><br>
+        </fieldset>
+        <br>
+
+        <label for="course">Choose your course</label>
+        <select name="course" id="course" required >
+            <option value="">--Select Courses--</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="B.Science">B.Science</option>
+            <option value="B.Arts">B.Arts</option>
+            <option value="B.Architecture">B.Architecture</option>
+        </select>
+        <br><br>
+
+        <label for="message">Your Message</label>
+        <br>
+        <textarea name="message" id="message" cols="150" rows="3"></textarea>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
