@@ -1,0 +1,430 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f1f5f9;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 230px;
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+  overflow: hidden;
+
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sidebar .logo {
+  margin-bottom: 30px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar nav a {
+  text-decoration: none;
+  color: #94a3b8;
+  transition: 0.3s;
+}
+
+.sidebar nav a:hover {
+  color: white;
+}
+
+/* HIDE SIDEBAR */
+.sidebar.hide {
+  width: 0;
+  padding: 0;
+}
+
+.sidebar.hide * {
+  opacity: 0;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 30px;
+
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* TOGGLE BUTTON */
+.toggle-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 200px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ENTRY ANIMATION (NO LAYOUT SHIFT) */
+.animate {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.animate:nth-child(1) { animation-delay: 0.2s; }
+.animate:nth-child(2) { animation-delay: 0.4s; }
+.animate:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* PERFORMANCE BOOST */
+.sidebar, .main {
+  will-change: width;
+}
+
+/* SUBJECTS SECTION */
+.subjects-section {
+  margin-top: 50px;
+  text-align: left;
+}
+
+.section-title {
+  margin-bottom: 20px;
+}
+
+/* GRID USING FLEX */
+.subjects {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* SUBJECT CARD */
+.subject-card {
+  flex: 1;
+  min-width: 220px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.subject-card:hover {
+  transform: translateY(-5px);
+}
+
+.subject-card h3 {
+  margin-bottom: 8px;
+}
+
+.subject-card p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* MARKS SECTION */
+.marks-section {
+  margin-top: 50px;
+  text-align: left;
+}
+
+/* TABLE CONTAINER */
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* HEADER */
+thead {
+  background: #0f172a;
+  color: white;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+/* ROWS */
+tbody tr {
+  border-bottom: 1px solid #e2e8f0;
+  transition: 0.3s;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+.pages .page {
+  display: none;
+}
+
+.pages .page:target {
+  display: block;
+}
+
+/* default page */
+.pages #home {
+  display: block;
+}
+
+/* when something is targeted, hide home */
+.pages:has(.page:target) #home {
+  display: none;
+}
+
+
+/* ===== FINAL UI POLISH ===== */
+
+/* Typography */
+body {
+  color: #0f172a;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Sidebar */
+.sidebar {
+  background: linear-gradient(180deg, #0f172a, #020617);
+  padding: 25px 20px;
+}
+
+.sidebar nav a {
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.sidebar nav a:hover {
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+
+/* Cards */
+.card {
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(59,130,246,0.15), transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* Section Titles */
+.section-title {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+/* Subject Cards */
+.subject-card {
+  border: 1px solid #e2e8f0;
+  transition: 0.3s;
+}
+
+.subject-card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-4px);
+}
+
+/* Table */
+table {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+tbody tr:hover {
+  background: #f1f5f9;
+}
+
+/* Button */
+.toggle-btn {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-radius: 8px;
+}
+
+.toggle-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===== PREMIUM DARK MODE ===== */
+
+/* smooth transition */
+.app, .card, .sidebar, table, .subject-card {
+  transition: all 0.4s ease;
+}
+
+/* MAIN BACKGROUND */
+#theme-toggle:checked ~ .app {
+  background: #020617;
+  color: #e2e8f0;
+}
+
+/* SIDEBAR */
+#theme-toggle:checked ~ .app .sidebar {
+  background: linear-gradient(180deg, #020617, #000000);
+  border-right: 1px solid #1e293b;
+}
+
+/* SIDEBAR LINKS */
+#theme-toggle:checked ~ .app .sidebar nav a {
+  color: #94a3b8;
+}
+
+#theme-toggle:checked ~ .app .sidebar nav a:hover {
+  background: rgba(59,130,246,0.15);
+  color: #60a5fa;
+}
+
+/* CARDS */
+#theme-toggle:checked ~ .app .card {
+  background: #0f172a;
+  color: #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* subtle glow */
+#theme-toggle:checked ~ .app .card:hover {
+  box-shadow: 0 10px 40px rgba(59,130,246,0.2);
+}
+
+/* SUBJECT CARDS */
+#theme-toggle:checked ~ .app .subject-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+}
+
+#theme-toggle:checked ~ .app .subject-card:hover {
+  border-color: #3b82f6;
+}
+
+/* TABLE */
+#theme-toggle:checked ~ .app table {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+#theme-toggle:checked ~ .app thead {
+  background: #020617;
+}
+
+#theme-toggle:checked ~ .app tbody tr {
+  border-color: #1e293b;
+}
+
+#theme-toggle:checked ~ .app tbody tr:hover {
+  background: #1e293b;
+}
+
+/* BUTTON */
+#theme-toggle:checked ~ .app .toggle-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+/* PREMIUM TOGGLE BUTTON */
+.toggle-label {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  background: #0f172a;
+  color: white;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.toggle-label:hover {
+  transform: scale(1.1);
+}
+
+/* when dark mode is ON */
+#theme-toggle:checked + .toggle-label {
+  background: #1e293b;
+}
+#theme-toggle {
+  display: none;
+}
