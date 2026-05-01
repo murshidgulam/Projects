@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <input type="checkbox" id="theme-toggle">
+    <label for="theme-toggle" class="toggle-label">🌙</label>
+
+    <div class="app">
+
+        <div class="container">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar" id="sidebar">
+                <h2 class="logo">Student Portal</h2>
+                <nav>
+                    <a href="#home">🏠 Home</a>
+                    <a href="#subjects">📚 Subjects</a>
+                    <a href="#marks">📊 Marks</a>
+                </nav>
+            </aside>
+
+            <!-- MAIN -->
+            <main class="main">
+
+                <!-- TOGGLE -->
+                <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+                <h1 class="animate">Welcome, Student 👋</h1>
+
+                <div class="cards">
+                    <div class="card animate">Attendance<br><b>85%</b></div>
+                    <div class="card animate">Subjects<br><b>6</b></div>
+                    <div class="card animate">Notifications<br><b>3</b></div>
+                </div>
+
+                <!-- SUBJECTS SECTION -->
+                <section id="subjects" class="page subjects-section">
+                    <h2 class="section-title">Subjects</h2>
+
+                    <div class="subjects">
+
+                        <div class="subject-card animate">
+                            <h3>Mathematics</h3>
+                            <p>Algebra, Calculus</p>
+                        </div>
+
+                        <div class="subject-card animate">
+                            <h3>Electronics</h3>
+                            <p>Circuits & Devices</p>
+                        </div>
+
+                        <div class="subject-card animate">
+                            <h3>Signals</h3>
+                            <p>Signal Processing</p>
+                        </div>
+
+                        <div class="subject-card animate">
+                            <h3>Communication</h3>
+                            <p>Analog & Digital</p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- MARKS SECTION -->
+                <section id="marks" class="page marks-section">
+                    <h2 class="section-title">Marks</h2>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Marks</th>
+                                    <th>Grade</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr class="animate">
+                                    <td>Mathematics</td>
+                                    <td>85</td>
+                                    <td>A</td>
+                                </tr>
+
+                                <tr class="animate">
+                                    <td>Electronics</td>
+                                    <td>78</td>
+                                    <td>B+</td>
+                                </tr>
+
+                                <tr class="animate">
+                                    <td>Signals</td>
+                                    <td>82</td>
+                                    <td>A-</td>
+                                </tr>
+
+                                <tr class="animate">
+                                    <td>Communication</td>
+                                    <td>88</td>
+                                    <td>A</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+
+        </div>
+
+        <script>
+            function toggleSidebar() {
+                document.getElementById("sidebar").classList.toggle("hide");
+            }
+        </script>
+    </div>
+</body>
+
+</html>
